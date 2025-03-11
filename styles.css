@@ -1,0 +1,205 @@
+
+body {
+    background: linear-gradient(to bottom, #302f2f, #000000);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito', sans-serif;
+}
+
+.cabeçalho {
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza os cards */
+    gap: 5px; /* Espaço entre os cards */
+
+}
+.cabeçalho-titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.lista  {
+    gap: 15px;
+    background-color: #000000;
+    border: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    width: 20%;
+    height: 70vh;
+    border-radius: 50px 0 50px 0 ;
+    font-size: 30px;
+    position: relative;
+}
+
+.lista::before {
+    content: "";
+    position: absolute;
+    top: -3.1px;
+    left: -2.9px;
+    width:102%;
+    height:71vh;
+    border-radius: 50px 0 50px 0 ;
+    background: linear-gradient(#ee5a04, #f7de04,#c91cac);
+    z-index: -1;
+    animation: animate 3s linear infinite;
+
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg) brightness(100%) blur(10px);
+    }
+    100% {
+        filter: hue-rotate(360deg) brightness(100%) blur(10px); 
+    }
+}
+
+.lista-item {
+    list-style: none;
+    padding: 20px 20px 20px 45px;
+   text-align: justify;
+}
+
+ .lista li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    cursor :pointer;
+    transition: background 0.4s ease-in-out, 
+    box-shadow 0.4s ease-in-out, 
+    transform 0.3s ease-in-out;
+ }
+ .lista li a:hover {
+
+    border-radius: 5px;
+    padding: 10px;
+    background: linear-gradient(45deg, #222222, #4e4e4e9c);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 0px 10px rgba(51, 51, 51, 0.5));
+    transform: translateY(-3px);
+ }
+
+ .titulo {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+ }
+
+ /*função para aparecer suavemente*/
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.titulo  {
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 1s ease-in-out forwards; /* Aparece suavemente */
+}
+
+
+.habilidades {
+
+    gap: 5px;
+    padding: 10px 150px;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+    background-color: #000000;
+    border: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 70vh;
+    border-radius: 0 50px 0 50px ;
+    font-size: 15px;
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+.habilidades::before {
+    content: "";
+    position: absolute;
+    top: -3.1px;
+    left: -2.9px;
+    width:102%;
+    height:74vh;
+    border-radius: 0 50px 0 50px ;
+    background: linear-gradient(#ee5a04, #f7de04,#c91cac);
+    z-index: -1;
+    animation: animate 3s linear infinite;
+}
+
+.habilidades-item {
+    list-style: none;
+    padding: 8px 8px 8px 40px;
+   text-align:center;
+   font-size: 12px;
+   align-items: center;
+
+}
+
+.habilidades-titulo {
+    align-items: center;
+    padding: 5px 10px;
+   
+}
+
+.habilidades-perfil {
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção */
+    border-radius: 50%; /* Se quiser cantos arredondados */
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 0px 10px rgba(224, 224, 222, 0.247));
+    
+    margin-top: 10px; /* Espaço entre o título e a imagem */
+}
+
+
+ .links {
+    text-decoration: none;
+    font: 20px;
+    font-family: 'nunito',sans-serif;
+    color: white;
+   cursor: pointer;
+   
+ }
+
+ .redes-item {
+    list-style: none;
+    padding: 10px 40px;
+ }
+
+ .redes-titulo {
+    text-align: center;
+    padding: 5px 20px;
+ }
+ 
+ .icones {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+ }
+ .redes-item a :hover {
+    border-radius: 5px;
+    padding: 10px;
+    background: linear-gradient(45deg, #222222, #4e4e4e9c);
+    box-shadow: 0px opx 20px 10px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 0px 8px rgba(51, 51, 51, 0.5));
+    transform: translateY(-3px);
+ }
+  
