@@ -15,7 +15,7 @@ body {
 }
 
 /* ===========================
-   LAYOUT PRINCIPAL
+   LAYOUT PRINCIPAL — DESKTOP
    =========================== */
 .cabecalho {
     padding: 30px 25px;
@@ -28,7 +28,7 @@ body {
 }
 
 /* ===========================
-   MENU DE NAVEGAÇÃO (LISTA)
+   MENU DE NAVEGAÇÃO
    =========================== */
 .lista {
     list-style: none;
@@ -45,7 +45,6 @@ body {
     gap: 5px;
 }
 
-/* Borda animada do menu */
 .lista::before {
     content: "";
     position: absolute;
@@ -95,7 +94,7 @@ body {
 }
 
 /* ===========================
-   ÁREA DE CONTEÚDO (TITULO)
+   ÁREA DE CONTEÚDO
    =========================== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateX(10px); }
@@ -110,7 +109,7 @@ body {
 }
 
 /* ===========================
-   CARD PRINCIPAL (HABILIDADES)
+   CARD PRINCIPAL
    =========================== */
 .habilidades {
     background-color: #000000;
@@ -128,7 +127,6 @@ body {
     color: white;
 }
 
-/* Borda animada do card */
 .habilidades::before {
     content: "";
     position: absolute;
@@ -152,7 +150,7 @@ body {
 }
 
 /* ===========================
-   FOTO DE PERFIL (index.html)
+   FOTO DE PERFIL
    =========================== */
 .habilidades-perfil {
     width: 200px;
@@ -165,7 +163,7 @@ body {
 }
 
 /* ===========================
-   LISTA DE HABILIDADES (habilidades.html)
+   LISTA DE HABILIDADES
    =========================== */
 .habilidades-tags {
     list-style: none;
@@ -195,7 +193,7 @@ body {
 }
 
 /* ===========================
-   REDES SOCIAIS (redes.html)
+   REDES SOCIAIS
    =========================== */
 .redes-lista {
     list-style: none;
@@ -241,7 +239,7 @@ body {
 }
 
 /* ===========================
-   SOBRE MIM (sobremim.html)
+   SOBRE MIM
    =========================== */
 .habilidades-sobre {
     text-align: left;
@@ -256,78 +254,68 @@ body {
     color: rgba(255, 255, 255, 0.85);
 }
 
-
 /* ===========================
-   RESPONSIVIDADE
+   MOBILE (até 768px)
+   tudo empilhado em coluna
    =========================== */
+@media (max-width: 768px) {
 
-/* TABLET (até 900px) */
-@media (max-width: 900px) {
-    .cabecalho {
-        padding: 20px 15px;
-        gap: 10px;
-    }
-
-    .lista {
-        width: 180px;
-        min-width: 180px;
-    }
-
-    .habilidades {
-        width: 100%;
-        padding: 30px 30px;
-    }
-}
-
-/* CELULAR (até 600px) */
-@media (max-width: 600px) {
-    .cabecalho {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 20px 15px;
-        gap: 15px;
+    body {
         min-height: 100vh;
     }
 
-    /* Menu vira barra horizontal no topo */
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        gap: 20px;
+        min-height: 100vh;
+    }
+
+    /* Menu ocupa largura total, altura automática */
     .lista {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 85%;
         min-width: unset;
         height: auto;
-        border-radius: 0 20px 0 20px;
-        gap: 0;
-        padding: 5px 0;
+        border-radius: 30px 0 30px 0;
+        padding: 15px 0;
+        gap: 4px;
     }
 
     .lista::before {
-        border-radius: 0 20px 0 20px;
+        border-radius: 30px 0 30px 0;
+        height: calc(100% + 6px);
     }
 
     .lista-item {
-        padding: 8px 6px;
+        padding: 6px 20px;
+        text-align: center;
+        width: 100%;
     }
 
     .lista li a {
-        font-size: 11px;
-        padding: 6px 8px;
-        letter-spacing: 0.02em;
+        font-size: 13px;
+        padding: 8px 16px;
+        text-align: center;
     }
 
-    /* Card de conteúdo ocupa toda a largura */
+    /* Conteúdo ocupa largura total, abaixo do menu */
     .titulo {
-        width: 100%;
+        width: 85%;
         justify-content: center;
+        animation: fadeIn 1s ease-in-out forwards;
     }
 
     .habilidades {
         width: 100%;
         min-height: unset;
-        padding: 30px 20px;
+        padding: 35px 25px;
         border-radius: 0 30px 0 30px;
+        gap: 14px;
     }
 
     .habilidades::before {
@@ -335,43 +323,32 @@ body {
     }
 
     .habilidades-titulo {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .habilidades-perfil {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
     }
 
     .habilidades-sobre {
+        padding: 30px 20px;
         text-align: left;
         align-items: flex-start;
-        padding: 25px 20px;
     }
 
     .sobre-texto {
         font-size: 13px;
+        line-height: 1.8;
     }
 
     .links {
         font-size: 13px;
-        padding: 10px 15px;
-    }
-}
-
-/* CELULAR PEQUENO (até 380px) */
-@media (max-width: 380px) {
-    .lista li a {
-        font-size: 10px;
-        padding: 5px 6px;
+        padding: 10px 16px;
     }
 
-    .habilidades-titulo {
-        font-size: 15px;
-    }
-
-    .habilidades-perfil {
-        width: 120px;
-        height: 120px;
+    .habilidades-item {
+        font-size: 13px;
+        padding: 10px 16px;
     }
 }
