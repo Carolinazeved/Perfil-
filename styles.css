@@ -1,21 +1,23 @@
+/* ===========================
+   RESET & BASE
+   =========================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background: linear-gradient(to bottom, #302f2f, #000000);
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: 'nunito', sans-serif;
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    color: white;
 }
 
-.cabeçalho {
-    padding: 10px 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centraliza os cards */
-    gap: 5px; /* Espaço entre os cards */
-
-}
-.cabeçalho-titulo {
+/* ===========================
+   CABEÇALHO / HEADER
+   =========================== */
+.cabecalho-titulo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,33 +26,44 @@ body {
     margin: 0 auto;
 }
 
-.lista  {
+.cabecalho {
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* ===========================
+   MENU DE NAVEGAÇÃO (LISTA)
+   =========================== */
+.lista {
     gap: 15px;
     background-color: #000000;
-    border: 10px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:start;
+    align-items: flex-start;
     width: 20%;
     height: 70vh;
-    border-radius: 50px 0 50px 0 ;
+    border-radius: 50px 0 50px 0;
     font-size: 30px;
     position: relative;
+    list-style: none;
 }
 
+/* Borda animada do menu */
 .lista::before {
     content: "";
     position: absolute;
-    top: -3.1px;
-    left: -2.9px;
-    width:102%;
-    height:71vh;
-    border-radius: 50px 0 50px 0 ;
-    background: linear-gradient(#ee5a04, #f7de04,#c91cac);
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 50px 0 50px 0;
+    background: linear-gradient(#ee5a04, #f7de04, #c91cac);
     z-index: -1;
     animation: animate 3s linear infinite;
-
 }
 
 @keyframes animate {
@@ -58,88 +71,87 @@ body {
         filter: hue-rotate(0deg) brightness(100%) blur(10px);
     }
     100% {
-        filter: hue-rotate(360deg) brightness(100%) blur(10px); 
+        filter: hue-rotate(360deg) brightness(100%) blur(10px);
     }
 }
 
 .lista-item {
     list-style: none;
     padding: 20px 20px 20px 45px;
-   text-align: justify;
+    text-align: justify;
 }
 
- .lista li a {
+.lista li a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
     font-size: 16px;
-    cursor :pointer;
-    transition: background 0.4s ease-in-out, 
-    box-shadow 0.4s ease-in-out, 
-    transform 0.3s ease-in-out;
- }
- .lista li a:hover {
+    cursor: pointer;
+    transition:
+        background 0.4s ease-in-out,
+        box-shadow 0.4s ease-in-out,
+        transform 0.3s ease-in-out;
+}
 
+.lista li a:hover {
     border-radius: 5px;
     padding: 10px;
-    background: linear-gradient(45deg, #222222, #4e4e4e9c);
+    background: linear-gradient(45deg, #222222, rgba(78, 78, 78, 0.61));
     box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
     filter: drop-shadow(0px 0px 10px rgba(51, 51, 51, 0.5));
     transform: translateY(-3px);
- }
+}
 
- .titulo {
+/* ===========================
+   ÁREA PRINCIPAL (TITULO)
+   =========================== */
+
+/* Animação de aparecer suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.titulo {
     padding: 10px 0;
     display: flex;
     align-items: center;
     margin-left: 150px;
- }
-
- /*função para aparecer suavemente*/
- @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
-.titulo  {
-    opacity: 0; /* Começa invisível */
-    animation: fadeIn 1s ease-in-out forwards; /* Aparece suavemente */
-}
-
-
+/* ===========================
+   CARD DE HABILIDADES / PERFIL
+   =========================== */
 .habilidades {
-
     gap: 5px;
     padding: 10px 150px;
     text-transform: uppercase;
-    text-decoration: none;
     list-style: none;
     background-color: #000000;
-    border: 10px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     width: 100%;
     height: 70vh;
-    border-radius: 0 50px 0 50px ;
+    border-radius: 0 50px 0 50px;
     font-size: 15px;
     position: relative;
-    color: rgb(255, 255, 255);
+    color: white;
 }
+
+/* Borda animada do card */
 .habilidades::before {
     content: "";
     position: absolute;
-    top: -3.1px;
-    left: -2.9px;
-    width:102%;
-    height:74vh;
-    border-radius: 0 50px 0 50px ;
-    background: linear-gradient(#ee5a04, #f7de04,#c91cac);
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 0 50px 0 50px;
+    background: linear-gradient(#ee5a04, #f7de04, #c91cac);
     z-index: -1;
     animation: animate 3s linear infinite;
 }
@@ -147,59 +159,58 @@ body {
 .habilidades-item {
     list-style: none;
     padding: 8px 8px 8px 40px;
-   text-align:center;
-   font-size: 12px;
-   align-items: center;
-
+    text-align: center;
+    font-size: 12px;
+    align-items: center;
 }
 
 .habilidades-titulo {
     align-items: center;
     padding: 5px 10px;
-   
 }
 
 .habilidades-perfil {
-    width: 200px; /* Ajuste conforme necessário */
-    height: auto; /* Mantém a proporção */
-    border-radius: 50%; /* Se quiser cantos arredondados */
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
     box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
     filter: drop-shadow(0px 0px 10px rgba(224, 224, 222, 0.247));
-    
-    margin-top: 10px; /* Espaço entre o título e a imagem */
+    margin-top: 10px;
 }
 
-
- .links {
+/* ===========================
+   LINKS E REDES SOCIAIS
+   =========================== */
+.links {
     text-decoration: none;
-    font: 20px;
-    font-family: 'nunito',sans-serif;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
     color: white;
-   cursor: pointer;
-   
- }
+    cursor: pointer;
+}
 
- .redes-item {
+.redes-item {
     list-style: none;
     padding: 10px 40px;
- }
+}
 
- .redes-titulo {
+.redes-titulo {
     text-align: center;
     padding: 5px 20px;
- }
- 
- .icones {
+}
+
+.icones {
     width: 24px;
     height: 24px;
     margin-right: 10px;
- }
- .redes-item a :hover {
+}
+
+/* Correção: removido espaço antes de :hover e typo "opx" */
+.redes-item a:hover {
     border-radius: 5px;
     padding: 10px;
-    background: linear-gradient(45deg, #222222, #4e4e4e9c);
-    box-shadow: 0px opx 20px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #222222, rgba(78, 78, 78, 0.61));
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
     filter: drop-shadow(0px 0px 8px rgba(51, 51, 51, 0.5));
     transform: translateY(-3px);
- }
-  
+}
